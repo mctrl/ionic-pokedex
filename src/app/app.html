@@ -9,8 +9,8 @@
     <ion-content>
       <ion-list>
           <!-- make this is for loop  -->
-        <button ion-item *ngFor="let p of pages;let i=index" (click)="openPage(i)">
-          {{p.title}}
+        <button ion-item *ngFor="let p of pages;let i=index" (click)="openPage(p.pokedex)">
+          Generation {{i+1}} - {{p.title}}
         </button>
       </ion-list>
     </ion-content>
