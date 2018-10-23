@@ -10,29 +10,20 @@ import 'rxjs/Rx';
 */
 @Injectable()
 export class PokeServiceProvider {
-
+  url: string;
 
   constructor(public http: Http) {
-    var url = 'https://pokeapi.co/api/v2/';
+    this.url = 'https://pokeapi.co/api/v2/';
     console.log('Hello pokeServiceProvider Provider');
   }
 
-  //Function that returns the current popular movies from the TMDb
-   getPopularMovies(){}
-
-  //Function that returns movies that are currently showing in Cinemas from the TMDb
-  getInTheaters(){}
-
-  //Uses the TMDb Search api to return movies based on the users search
-  searchMovies(searchStr:string){}
-
-  //returns the information on a particular movie using it's ID
-  getMovie(id){}
-
-    //Returns a the list of genres in TMDB
-   getGenres(){}
-
-    //Returns a list of movies with a specified genre 
-   getMoviesByGenre(genreId){}
+  //returns the pokedex based on the number
+  getPokedexNumber(pokedex: string){
+    var completeUrl = this.url+'pokedex/'+pokedex;
+    console.log('provider reached', completeUrl)
+    
+    
+    return this.http.get(completeUrl).map(res=> res.json());
+  }
 
 }

@@ -12,7 +12,7 @@ import { PokedexList } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
-  pages: Array<{title: string, pokedex: number}>;
+  pages: Array<{title: string, pokedex: string}>;
 
   constructor(
     public platform: Platform,
@@ -23,13 +23,13 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Kanto', pokedex: 2},
-      { title: 'Johto', pokedex: 3},
-      { title: 'Hoenn', pokedex: 4},
-      { title: 'Sinnoh', pokedex: 5},
-      { title: 'Unova', pokedex: 9},
-      { title: 'Kalos', pokedex: 13},
-      { title: 'Alola', pokedex: 14}
+      { title: 'Kanto', pokedex: '2/'},
+      { title: 'Johto', pokedex: '3/'},
+      { title: 'Hoenn', pokedex: '4/'},
+      { title: 'Sinnoh', pokedex: '5/'}
+      // { title: 'Unova', pokedex: '9/'},
+      // { title: 'Kalos', pokedex: '13/'},
+      // { title: 'Alola', pokedex: '14/'}
 
     ];
     this.initializeApp();
