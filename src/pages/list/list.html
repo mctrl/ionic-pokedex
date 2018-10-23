@@ -10,9 +10,9 @@
   
       <ion-item *ngFor="let poke of pokelist;let i=index">
         <ion-thumbnail item-start>
-          <img ngSrc="assets/imgs/pokes/{{p.entry_number}}.png">
+          <img src="assets/imgs/pokes/{{poke.entry_number}}.png">
         </ion-thumbnail>
-        <h2>{{p.pokemon_species.name}}</h2>
+        <h2>{{poke.pokemon_species.name}}</h2>
         <button ion-button clear item-end>View</button>
       </ion-item>
   
