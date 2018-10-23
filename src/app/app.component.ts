@@ -48,7 +48,8 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(PokedexList);
+    this.nav.push(PokedexList, { pokedex: pokedex });
+    // this.nav.setRoot(PokedexList);
     console.log('trying to navigate to generation', pokedex)
   }
 }
