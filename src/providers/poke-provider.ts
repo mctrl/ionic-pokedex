@@ -21,8 +21,15 @@ export class PokeServiceProvider {
   getPokedexNumber(pokedex: string){
     var completeUrl = this.url+'pokedex/'+pokedex;
     console.log('provider reached', completeUrl)
-    
-    
+    return this.http.get(completeUrl).map(res=> res.json());
+  }
+
+  getPokemonDetails() {
+
+  }
+
+  getGeneration(generation: number){
+    var completeUrl = this.url+'generation/'+generation;
     return this.http.get(completeUrl).map(res=> res.json());
   }
 

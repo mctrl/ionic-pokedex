@@ -1,6 +1,9 @@
 
 <ion-header>
     <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
       <ion-title>{{pokedexName}}</ion-title>
     </ion-navbar>
   </ion-header>
@@ -10,9 +13,9 @@
   
       <ion-item *ngFor="let poke of pokelist;let i=index">
         <ion-thumbnail item-start>
-          <img src="https://via.placeholder.com/80x80">
+          <img src="./assets/imgs/pokes/{{imageAt+i}}.png">
         </ion-thumbnail>
-        <h2>{{poke.pokemon_species.name}}</h2>
+        <h2>{{poke.name}}</h2>
         <button ion-button clear item-end>View</button>
       </ion-item>
   

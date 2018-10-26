@@ -12,7 +12,7 @@ import { PokedexList } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
-  pages: Array<{title: string, pokedex: string}>;
+  pages: Array<{title: string, generation: number, imgStartAt: number}>;
 
   constructor(
     public platform: Platform,
@@ -23,10 +23,10 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Kanto', pokedex: '2/'},
-      { title: 'Johto', pokedex: '3/'},
-      { title: 'Hoenn', pokedex: '4/'},
-      { title: 'Sinnoh', pokedex: '5/'}
+      { title: 'Kanto', generation: 1, imgStartAt: 1},
+      { title: 'Johto', generation: 2, imgStartAt: 152},
+      { title: 'Hoenn', generation: 3, imgStartAt: 252},
+      { title: 'Sinnoh', generation: 4, imgStartAt: 387}
       // { title: 'Unova', pokedex: '9/'},
       // { title: 'Kalos', pokedex: '13/'},
       // { title: 'Alola', pokedex: '14/'}
@@ -44,13 +44,13 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
-  openPage(pokedex) {
+  openPage(page) {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.push(PokedexList, { pokedex: pokedex });
-    // this.nav.setRoot(PokedexList);
-    console.log('trying to navigate to generation', pokedex)
+    // this.nav.push(PokedexList, { generation: generation });
+    this.nav.setRoot(PokedexList, { page: page});
+    console.log('trying to navigate to generation', page)
   }
 }
 
